@@ -1,0 +1,7 @@
+.idea/
+.cache
+
+node_modules/
+dist/
+!dist/fish-calendar.js
+!dist/fish-calendar.js.map
