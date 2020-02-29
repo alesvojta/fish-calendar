@@ -17,11 +17,7 @@ type DataType = {
 } | null
 
 export function App({ dataUrl }: AppProps) {
-  const { isLoading, data } = useFetch<DataType>(dataUrl)
-
-  if (isLoading && !data) {
-    return <Loader text="Načítám ryby..." />
-  }
+  const { data } = useFetch<DataType>(dataUrl)
 
   if (data) {
     const date = new Date()
@@ -34,4 +30,6 @@ export function App({ dataUrl }: AppProps) {
 
     return <Calendar date={dateStr} troutIn={troutIn} troutOut={troutOut} fishes={fishes} />
   }
+
+  return <Loader text="Načítám ryby..." />
 }
