@@ -1,0 +1,29 @@
+#fish-calendar {
+    font-family: sans-serif;
+}
+
+#fish-calendar .fish-calendar {
+    margin: 0 auto;
+    max-width: 320px;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+#fish-calendar .fish-calendar,
+#fish-calendar .fish-calendar td {
+    padding: 5px;
+    border: 1px solid #000;
+}
+
+#fish-calendar .fish-calendar td.tall {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#fish-calendar .fish-calendar-item + .fish-calendar-item {
+    margin-top: 10px;
+}
+
+#fish-calendar .fish-calendar-item span {
+    display: block;
+}

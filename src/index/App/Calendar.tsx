@@ -15,10 +15,14 @@ export function Calendar(props: Props) {
   return (
     <table class="fish-calendar">
       <tr>
-        <th colSpan={2}>{date}</th>
+        <td colSpan={2}>
+          <b>{date}</b>
+        </td>
       </tr>
       <tr>
-        <td colSpan={2}>Denní lov na revírech</td>
+        <td class="tall" colSpan={2}>
+          Denní lov na revírech
+        </td>
       </tr>
       <tr>
         <td>
@@ -33,10 +37,14 @@ export function Calendar(props: Props) {
         <td>{troutOut}</td>
       </tr>
       <tr>
-        <td colSpan={2}>Hájeny jsou</td>
+        <td class="tall" colSpan={2}>
+          Hájeny jsou
+        </td>
       </tr>
       <tr>
-        <th colSpan={2}>{fishElements}</th>
+        <td class="tall" colSpan={2}>
+          {fishElements}
+        </td>
       </tr>
     </table>
   )

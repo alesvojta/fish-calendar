@@ -11,7 +11,7 @@ export function Fish(props: Props) {
   return (
     <div class="fish-calendar-item">
       <img src={image} alt={name} />
-      {name}
+      <span>{name}</span>
     </div>
   )
 }
