@@ -1,25 +1,31 @@
 import { useEffect, useState } from 'preact/hooks'
 
 export function useFetch<T>(url: string) {
-  const [isLoading, setIsLoading] = useState(false)
   const [data, setData] = useState<T>(null)
   const [error, setError] = useState(null)
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
-    setIsLoading(true)
+    let mounted = true
     try {
+      setLoading(true)
       fetch(url)
-        .then(r => r.json())
-        .then(response => {
-          setData(response)
-          setIsLoading(false)
+        .then(res => res.json())
+        .then(data => {
+          if (mounted) {
+            setData(data)
+            setLoading(false)
+          }
         })
     } catch (e) {
-      setError(e)
-      setIsLoading(false)
-      console.log(e)
+      if (mounted) setError(e)
+    } finally {
+      if (mounted) setLoading(false)
+    }
+    return () => {
+      mounted = false
     }
   }, [url])
 
-  return { isLoading, data, error }
+  return { data, error, loading }
 }
