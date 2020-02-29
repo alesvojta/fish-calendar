@@ -4,22 +4,27 @@
   "description": "",
   "main": "dist/index.js",
   "scripts": {
-    "clean": "rimraf dist",
     "build": "npm run clean && npm run build:app",
     "build:app": "parcel build src/index.tsx --out-file fish-calendar.js",
-    "start": "parcel src/index.html",
+    "clean": "rimraf dist",
     "destiny": "destiny src",
+    "release": "standard-version",
+    "start": "parcel src/index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "destiny": "^0.2.1",
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
+    "destiny": "^0.3.1",
     "eslint": "^6.8.0",
+    "husky": "^4.2.3",
     "parcel-bundler": "^1.12.4",
     "prettier": "^1.19.1",
     "rimraf": "^3.0.2",
+    "standard-version": "^7.1.0",
     "typescript": "^3.8.2"
   },
   "dependencies": {
